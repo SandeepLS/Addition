@@ -1,0 +1,57 @@
+import java.lang.*;
+
+class calc
+ {
+     float real,img;//declare local Variable
+     
+     calc()//Default constructor,Do Nothing Here
+     {
+         /*Since we are using calc here,
+         to create c3 object we need to write,
+         Default Constructor*/
+     }
+     
+     calc(float r, float i)//i will make Paramiterized Constructor,indicate real and imag part
+     {
+         real=r;
+         img=i;
+     }
+     void display()//display function,using local variable ,print the real & img
+     {
+         System.out.println(real+"+i"+img);
+     }
+     
+     calc add(calc c2)//return type,add is the function name
+     {
+         calc res =new calc();//we will take another objects
+         
+         res.real = real+c2.real;
+         res.img = img+c2.img;
+         
+         return(res);//return res
+     }
+ }
+ class Main
+ {
+     public static void main(String args[])
+     {
+         calc c1 = new calc(12.5F,2.5F);//two objects of Calc class
+         calc c2 = new calc(09.5F,0.5F);
+         
+         System.out.println("C1 is:");
+         c1.display();
+         System.out.println("C2 is:");
+         c2.display();//it wii help us display the vaues
+         
+         calc c3 = new calc();//to store the result of c3
+         
+         System.out.println("Addition of C1 and C2 is:");
+         c3=c1.add(c2);// //using c1 we will call the function add,and pass object c2
+         c3.display();
+         
+         
+     }
+ }
+ 
+ 
+ //Subtraction Method as it is same
